@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\RegisteredUserController;
+use App\Http\Controllers\RegisteredTenantController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +21,8 @@ Route::get('/', function () {
 
 //   Register route to create a tenant
 Route::middleware('guest')->group(function () {
-    Route::post('register', [RegisteredUserController::class, 'store']);
+    Route::get('register', [RegisteredTenantController::class, 'create'])
+        ->name('register');
+
+    Route::post('register', [RegisteredTenantController::class, 'store']);
 });
