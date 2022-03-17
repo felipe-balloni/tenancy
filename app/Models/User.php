@@ -48,5 +48,11 @@ class User extends Authenticatable
     protected static function booted()
     {
         self::addGlobalScope(new TenantScope);
+
+        self::creating(function ($model) {
+            if (session()->has('tenant_id')) {
+                $model->tenant_id = session()->get('tenant_id');
+            }
+        });
     }
 }
