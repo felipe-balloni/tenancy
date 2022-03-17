@@ -15,7 +15,11 @@ class RegisteredTenantController extends Controller
 
     public function store(RegisteredTenantRequest $request)
     {
-       $tenant = Tenant::create($request->validated());
+       $tenant = Tenant::create(
+           $request->safe()->all()
+       );
        $tenant->domains()->create(['domain' => $request->domain]);
+
+       return redirect(tenant_route($tenant->domains->first->domain));
     }
 }

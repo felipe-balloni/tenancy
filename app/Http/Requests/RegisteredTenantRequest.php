@@ -25,6 +25,7 @@ class RegisteredTenantRequest extends FormRequest
     public function rules()
     {
         return [
+            'id' => 'required',
             'company' => ['required', 'string', 'max:255'],
             'domain' => ['required', 'string', 'max:25', 'unique:domains'],
             'name' => ['required', 'string', 'max:255'],
@@ -36,6 +37,7 @@ class RegisteredTenantRequest extends FormRequest
     protected function prepareForValidation()
     {
         $this->merge([
+            'id' => $this->domain,
             'domain' => $this->domain . '.' . config('tenancy.central_domains')[0],
         ]);
     }
