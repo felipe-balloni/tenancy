@@ -11,10 +11,7 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     You're logged in!
 
-                    <br/>
-                    {{ App\Models\User::count() }} - Users
-                    <br/>
-                    {{ App\Models\User::where('tenant_id',  1)->count() }} - User of tenant 1
+                    <livewire:department-form />
 
                 </div>
             </div>
