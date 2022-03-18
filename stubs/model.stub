@@ -10,7 +10,7 @@ class {{ class }} extends Model
 {
     use HasFactory;
 
-    protected static function boot()
+    protected static function booted()
     {
         self::addGlobalScope(new TenantScope);
 
