@@ -13,6 +13,8 @@
 
                     <livewire:department-form />
 
+                    {{ \App\Models\User::count() }}
+
                 </div>
             </div>
         </div>
