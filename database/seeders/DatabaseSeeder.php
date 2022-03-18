@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Department;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -18,5 +19,7 @@ class DatabaseSeeder extends Seeder
         User::factory()->create();
         User::factory(9)->create(['tenant_id' => 1]);
         User::factory(10)->create();
+
+        Department::factory(10)->create(['tenant_id' => 1]);
     }
 }

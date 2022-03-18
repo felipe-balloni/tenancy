@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Livewire;
 
-use App\Models\Departament;
+use App\Models\Department;
 use Filament\Forms\ComponentContainer;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
@@ -39,7 +39,7 @@ class DepartmentForm extends Component implements HasForms
 
     public function submit(): void
     {
-        Departament::create($this->form->getState());
+        Department::create($this->form->getState());
 
         $this->alert('success', 'Record saved successfully!');
 
@@ -48,7 +48,7 @@ class DepartmentForm extends Component implements HasForms
 
     protected function getFormModel(): string
     {
-        return Departament::class;
+        return Department::class;
     }
 
     public function render()
