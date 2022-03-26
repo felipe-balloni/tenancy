@@ -45,11 +45,4 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
-    protected static function booted()
-    {
-        self::creating(function ($model) {
-            $model->role = 'user';
-        });
-    }
 }
