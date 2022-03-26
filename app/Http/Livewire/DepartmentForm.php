@@ -4,22 +4,19 @@ declare(strict_types=1);
 
 namespace App\Http\Livewire;
 
+use Livewire\Component;
 use App\Models\Department;
-use Filament\Forms\ComponentContainer;
-use Filament\Forms\Concerns\InteractsWithForms;
-use Filament\Forms\Contracts\HasForms;
 use Filament\Forms;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
-use Livewire\Component;
 
 /**
  * @property ComponentContainer|mixed $form
  */
-class DepartmentForm extends Component implements HasForms
+class DepartmentForm extends Component implements Forms\Contracts\HasForms
 {
-    use InteractsWithForms, LivewireAlert;
+    use Forms\Concerns\InteractsWithForms, LivewireAlert;
 
-    public ? string $name = '';
+    public ?string $name = '';
 
     public function mount()
     {
