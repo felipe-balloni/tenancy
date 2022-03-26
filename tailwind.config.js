@@ -8,13 +8,16 @@ module.exports = {
         './resources/**/*.blade.php',
         './vendor/filament/**/*.blade.php',
     ],
+    // darkMode: 'class',
     safelist: [
-        // {
-        //     pattern: /bg-(green|yellow|blue|red)-(50|100|200|300|400|500|600|700|800|900)/
-        // },
-        // {
-        //     pattern: /border-(green|yellow|blue|red)-(50|100|200|300|400|500|600|700|800|900)/
-        // },
+        {
+            pattern: /bg-(green|yellow|blue|red)-(50|100|200|300|400|500|600|700|800|900)/
+        },
+        {
+            pattern: /border-(green|yellow|blue|red)-(50|100|200|300|400|500|600|700|800|900)/
+        },
+        'bg-black',
+        'border-black',
     ],
     theme: {
         extend: {
