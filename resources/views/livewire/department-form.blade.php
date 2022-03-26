@@ -2,9 +2,8 @@
     <form wire:submit.prevent="submit" class="space-y-4">
         {{ $this->form }}
 
-        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        <button type="submit" class="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700">
             Submit
         </button>
     </form>
 </div>
-
